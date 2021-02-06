@@ -21,23 +21,30 @@ export default class Splash extends Scene {
   }
 
   get finish() {
-    return new Promise((res)=>setTimeout(res, this.config.hideDelay));
+    return new Promise((res) => setTimeout(res, this.config.hideDelay));
   }
 
   preload() {
     const images = {
       logo: Assets.images.logo,
+      capguy01: Assets.images['capguy_01'],
+      capguy02: Assets.images['capguy_02'],
+      capguy03: Assets.images['capguy_03'],
+      capguy04: Assets.images['capguy_04'],
+      capguy05: Assets.images['capguy_05'],
+      capguy06: Assets.images['capguy_06'],
+      capguy07: Assets.images['capguy_07'],
+      capguy08: Assets.images['capguy_08'],
     };
-    const sounds = {
-      
-    };
+    const sounds = {};
 
     return super.preload({ images, sounds });
   }
 
-  onResize(width, height) { // eslint-disable-line no-unused-vars
+  onResize(width, height) {
+    // eslint-disable-line no-unused-vars
     this.loadingText.x = width / 2;
-    this.loadingText.y = (height / 2) + 500;
+    this.loadingText.y = height / 2 + 500;
   }
 
   onLoadProgress(val) {
